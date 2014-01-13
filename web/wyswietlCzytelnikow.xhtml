@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+                template="./layout.xhtml">
+
+    <ui:define name="content">
+        <h1> Lista czytelników </h1>
+        <h:form>
+        <h:dataTable value="#{czytelnikCon.listaCzytelnikow()}" var="czytelnik"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    		>
+ 
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Imie</f:facet>
+    				<!-- row record -->
+    				#{czytelnik.imie}
+    			</h:column>
+ 
+    			<h:column>
+    				<f:facet name="header">Nazwisko</f:facet>
+    				#{czytelnik.nazwisko}
+    			</h:column>
+ 
+    			<h:column>
+    				<f:facet name="header">Pesel</f:facet>
+    				#{czytelnik.pesel}
+    			</h:column>
+ 
+    			<h:column>
+    				<f:facet name="header">Adres</f:facet>
+    				#{czytelnik.adres},#{czytelnik.miasto}
+    			</h:column>
+            
+                        <h:column>
+    				<f:facet name="header">Akcje</f:facet>
+                                <h:commandLink value="Edytuj" action="#{czytelnikCon.doEdycjiCzytelnika(czytelnik)}" />&nbsp;
+                                <h:commandLink value="Usuń" action="#{czytelnikCon.usunCzytelnika(czytelnik)}" />
+    			</h:column>
+ 
+    		</h:dataTable>
+    </h:form>
+ 
+    </ui:define>
+
+</ui:composition>

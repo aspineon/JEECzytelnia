@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./layout.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <h1>Dodaj nową książkę do Czytelni</h1>
+        <h:form>
+            <h:outputText id="komunikat"/>
+            <h:messages style="color:red;margin:8px;" />
+            <table>
+                <tr>
+                    <td>Imie autora: </td>
+                    <td>
+                        <h:inputText id="autorimie" value="#{ksiazkaCon.ksiazka.autorimie}" required="true" label="Imie Autora">
+                            <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:ajax event="blur" render="@this"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nazwisko autora: </td>
+                    <td>
+                        <h:inputText id="autornazwisko" value="#{ksiazkaCon.ksiazka.autornazwisko}" required="true" label="Nazwisko Autora">
+                            <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:ajax event="blur" render="@this"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tytuł książki: </td>
+                    <td>
+                        <h:inputText id="tytul" value="#{ksiazkaCon.ksiazka.tytul}" required="true" label="Tytuł">
+                            <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:ajax event="blur" render="@this"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h:commandButton action="#{ksiazkaCon.dodajKsiazke}" value="Dodaj">
+                            <f:ajax render="@form" />
+                        </h:commandButton>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    template="./layout.xhtml">
+
+    <ui:define name="content">
+        <h1> Lista książek dostępnych w Czytelni</h1>
+        <h:form>
+        <h:dataTable value="#{ksiazkaCon.listaKsiazek()}" var="ksiazka"
+    			styleClass="pure-table pure-table-bordered"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    		>
+ 
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Autor</f:facet>
+    				<!-- row record -->
+    				#{ksiazka.autorimie}&nbsp;#{ksiazka.autornazwisko}
+    			</h:column>
+ 
+    			<h:column>
+    				<f:facet name="header">Tytuł</f:facet>
+    				#{ksiazka.tytul}
+    			</h:column>
+ 
+    			<h:column>
+    				<f:facet name="header">Wypozyczen</f:facet>
+    				#{ksiazka.iloscwypozyczen}
+    			</h:column>
+ 
+    			<h:column>
+    				<f:facet name="header">Wypozyczona?</f:facet>
+    				<h:outputText value="#{ksiazkaCon.jestWypozyczona(ksiazka)}" />
+    			</h:column>
+            
+                        <h:column>
+    				<f:facet name="header">Akcje</f:facet>
+                                <h:commandLink value="Edytuj" action="#{ksiazkaCon.doEdycjiKsiazki(ksiazka)}" />&nbsp;
+                                <h:commandLink value="Usuń" action="#{ksiazkaCon.usunKsiazke(ksiazka)}" />
+    			</h:column>
+ 
+    		</h:dataTable>
+    </h:form>
+ 
+    </ui:define>
+
+</ui:composition>

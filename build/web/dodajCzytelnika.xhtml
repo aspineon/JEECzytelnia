@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./layout.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <h1>Dodaj nowego czytelnika</h1>
+        
+        <h:form>
+            <h:outputText id="komunikat"/>
+            <h:messages style="color:red;margin:8px;" />
+            <table>
+                <tr>
+                    <td>Imie</td>
+                    <td>
+                        <h:inputText id="imie" value="#{czytelnikCon.czytelnik.imie}" required="true" label="Imię">
+                          <f:converter converterId="firstUpperCaseConverter"/>
+                          <f:ajax event="blur" render="@this"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nazwisko</td>
+                    <td>
+                        <h:inputText id="nazwisko" value="#{czytelnikCon.czytelnik.nazwisko}" required="true" label="Nazwisko">
+                            <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:ajax event="blur" render="@this"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pesel</td>
+                    <td>
+                        <h:inputText id="pesel" value="#{czytelnikCon.czytelnik.pesel}" required="true" maxlength="11" label="Pesel">
+                            <f:validator id="validator" validatorId="peselValidator" />
+                            <f:attribute name="isEditing" value="false" />
+                            <f:ajax event="blur" render="@this"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adres</td>
+                    <td>
+                        <h:inputText id="adres" value="#{czytelnikCon.czytelnik.adres}" required="true" label="Adres">
+                            <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:ajax event="blur" render="@this"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Miasto</td>
+                    <td>
+                        <h:inputText id="miasto" value="#{czytelnikCon.czytelnik.miasto}" required="true"  label="Miasto">
+                            <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:ajax event="blur" render="@this"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h:commandButton action="#{czytelnikCon.dodajCzytelnika}" value="Dodaj">
+                            <f:ajax render="@form" />
+                        </h:commandButton>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
