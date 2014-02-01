@@ -10,6 +10,7 @@
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/dodajCzytelnika.xhtml</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/edytujCzytelnika.xhtml</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/wyswietlCzytelnikow.xhtml</file>
+            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/controllers/CzytelniaController.java</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/services/CzytelnikManager.java</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/resources/css/cssLayout.css</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/conf/persistence.xml</file>
@@ -19,6 +20,7 @@
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/dodajWypozyczenie.xhtml</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/index.xhtml</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/converters/ksiazkaConverter.java</file>
+            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/entity/Ksiazka.java</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/WEB-INF/beans.xml</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/controllers/KsiazkaController.java</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/dodajKsiazke.xhtml</file>
