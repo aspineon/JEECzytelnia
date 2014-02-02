@@ -2,20 +2,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <f:view contentType="text/html">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
          <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" />
         <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
+        <link type="text/css" rel="stylesheet" href="/Czytelnia/javax.faces.resource/primefaces.css.xhtml?ln=primefaces&amp;v=4.0" />
+        <script type="text/javascript" src="/Czytelnia/javax.faces.resource/jquery/jquery-plugins.js.xhtml?ln=primefaces&amp;v=4.0"></script>
         <title>System Zarządzania Czytelnią</title>
     </h:head>
 
     <h:body>
        
+        
+        
+        
         <div id="left">
             <h3> Czytelnia</h3>
+            
+  
+            
             <ul>
                 <li><h:outputLink value="index.xhtml">Strona główna</h:outputLink></li>
                 <li><h:outputLink value="dodajWypozyczenie.xhtml">Nowe wypożyczenie</h:outputLink></li>
@@ -37,5 +49,5 @@
         </div>
 
     </h:body>
-
+    </f:view>
 </html>

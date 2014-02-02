@@ -5,6 +5,7 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
                 template="./layout.xhtml">
 
     <ui:define name="content">
@@ -13,7 +14,11 @@
         <h1>#{czytelnia.nazwa}</h1>
         <h2><tt>#{czytelnia.adres} - #{czytelnia.kontakt}</tt></h2>
         <p>#{czytelnia.opis}</p>
-   
+        
+        <c:if test="${ksiazkaCon.iloscKsiazek() > 0}">
+            <p:pieChart id="custom" value="#{czytelniaCon.ksiazkiModel}" legendPosition="e" fill="false" showDataLabels="true"  
+                title="Statystyki wypożyczeń" style="width:400px;height:300px" sliceMargin="5" diameter="150" />
+        </c:if>
         
         <h1>Aktualna lista wypożyczonych książek</h1>
         <h:form>
@@ -36,7 +41,8 @@
             
                         <h:column>
     				<f:facet name="header">Akcja</f:facet>
-                                <h:commandLink value="Zwrócona" action="#{wypozyczeniaCon.zwrocKsiazke(wypozyczenie)}" />
+                                <h:commandLink value="Zwrócona" action="#{wypozyczeniaCon.zwrocKsiazke(wypozyczenie)}"/>
+                             
     			</h:column>
  
     		</h:dataTable>

@@ -3,20 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/services/KsiazkaManager.java</file>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/entity/Wypozyczenia.java</file>
+            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/converters/FirstUpperConverter.java</file>
+            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/wyswietlKsiazki.xhtml</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/index.xhtml</file>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/converters/ksiazkaConverter.java</file>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/entity/Ksiazka.java</file>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/controllers/WypozyczeniaController.java</file>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/controllers/CzytelniaController.java</file>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/services/CzytelnikManager.java</file>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/converters/czytelnikConverter.java</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/resources/css/cssLayout.css</file>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/nbproject/build-impl.xml</file>
-            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/WEB-INF/faces-config.xml</file>
+            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/WEB-INF/beans.xml</file>
+            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/controllers/KsiazkaController.java</file>
+            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/edytujCzytelnika.xhtml</file>
+            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/src/java/pl/maciejkolek/czytelnia/controllers/WypozyczeniaController.java</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/resources/css/default.css</file>
             <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/dodajWypozyczenie.xhtml</file>
+            <file>file:/Users/ferus/NetBeansProjects/Czytelnia/web/edytujKsiazke.xhtml</file>
         </group>
     </open-files>
 </project-private>

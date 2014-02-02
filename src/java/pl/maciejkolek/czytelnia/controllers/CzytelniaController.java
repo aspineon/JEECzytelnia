@@ -7,13 +7,21 @@
 package pl.maciejkolek.czytelnia.controllers;
 
 import java.io.Serializable;
+import java.util.Iterator;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import java.util.List;
+
+import pl.maciejkolek.czytelnia.services.KsiazkaManager;
+import pl.maciejkolek.czytelnia.entity.Ksiazka;
+
 import pl.maciejkolek.czytelnia.services.CzytelniaManager;
 import pl.maciejkolek.czytelnia.entity.Czytelnia;
+
+import org.primefaces.model.chart.PieChartModel;
 
 /**
  *
@@ -28,7 +36,12 @@ public class CzytelniaController implements Serializable {
     @Inject
     private CzytelniaManager cm;
     
+    @Inject
+    private KsiazkaManager km;
+    
     private Czytelnia czytelnia = new Czytelnia();
+    
+    private PieChartModel ksiazkiModel; 
     
     public Czytelnia getCzytelnia() {
         return this.czytelnia;
@@ -40,5 +53,22 @@ public class CzytelniaController implements Serializable {
     
     public Czytelnia daneCzytelni() {
         return cm.pobierz();
+    }
+    
+    public PieChartModel getKsiazkiModel() {
+        this.daneWykresu();
+        return this.ksiazkiModel;
+    }
+    
+    private void daneWykresu() {
+        this.ksiazkiModel = new PieChartModel();  
+
+        List<Ksiazka> listaKsiazek = km.pobierz();
+        
+        if (listaKsiazek.size() > 0) {
+            for (Ksiazka k : listaKsiazek) {
+                 this.ksiazkiModel.set(k.getTytul(), k.getIloscwypozyczen()); 
+            }
+        }
     }
 }
