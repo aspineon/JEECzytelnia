@@ -12,11 +12,13 @@ Aplikacja korzysta z następujących technologii, frameworków:
 * mySQL za pomocą jdbc
 * CDI, BeanValidations
 * [PureCSS.io](http://purecss.io) `do stylowania tabel`
+* Primefaces `do tworzenia wykresu`
 
 Aplikacja posiada:
 
 * Konwertery `@FacesConverter`
 * Validatory `@FacesValidator - pesel`
+* Pattern-matching po regexpie
 * AJAX `konwersja pola tekstowego z pierwszej malej litery na duza`
 
 Na aplikacje składają się:
