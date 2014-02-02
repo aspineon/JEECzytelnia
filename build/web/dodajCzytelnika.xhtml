@@ -18,8 +18,9 @@
                     <td>
                         <h:inputText id="imie" value="#{czytelnikCon.czytelnik.imie}" required="true" label="Imię">
                           <f:converter converterId="firstUpperCaseConverter"/>
-                          <f:ajax event="blur" render="@this"/>
+                          <f:ajax event="blur" render="imieMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="imieMsg" for="imie"/></span>
                     </td>
                 </tr>
                 <tr>
@@ -27,8 +28,9 @@
                     <td>
                         <h:inputText id="nazwisko" value="#{czytelnikCon.czytelnik.nazwisko}" required="true" label="Nazwisko">
                             <f:converter converterId="firstUpperCaseConverter"/>
-                            <f:ajax event="blur" render="@this"/>
+                            <f:ajax event="blur" render="nazwiskoMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="nazwiskoMsg" for="nazwisko"/></span>
                     </td>
                 </tr>
                 <tr>
@@ -36,9 +38,9 @@
                     <td>
                         <h:inputText id="pesel" value="#{czytelnikCon.czytelnik.pesel}" required="true" maxlength="11" label="Pesel">
                             <f:validator id="validator" validatorId="peselValidator" />
-                            <f:attribute name="isEditing" value="false" />
-                            <f:ajax event="blur" render="@this"/>
+                            <f:ajax event="blur" render="peselMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="peselMsg" for="pesel"/></span>
                     </td>
                 </tr>
                 <tr>
@@ -46,8 +48,9 @@
                     <td>
                         <h:inputText id="adres" value="#{czytelnikCon.czytelnik.adres}" required="true" label="Adres">
                             <f:converter converterId="firstUpperCaseConverter"/>
-                            <f:ajax event="blur" render="@this"/>
+                            <f:ajax event="blur" render="adresMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="adresMsg" for="adres"/></span>
                     </td>
                 </tr>
                 <tr>
@@ -55,15 +58,16 @@
                     <td>
                         <h:inputText id="miasto" value="#{czytelnikCon.czytelnik.miasto}" required="true"  label="Miasto">
                             <f:converter converterId="firstUpperCaseConverter"/>
-                            <f:ajax event="blur" render="@this"/>
+                            <f:ajax event="blur" render="miastoMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="miastoMsg" for="miasto"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
                         <h:commandButton action="#{czytelnikCon.dodajCzytelnika}" value="Dodaj">
-                            <f:ajax render="@form" />
+                            <f:ajax execute="@form" render="@form" />
                         </h:commandButton>
                     </td>
                 </tr>

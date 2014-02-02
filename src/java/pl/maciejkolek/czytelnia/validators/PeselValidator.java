@@ -34,12 +34,8 @@ public void validate(FacesContext ctx, UIComponent component, Object value) {
      String pesel = (String)value;
     if (!(pesel.matches("[0-9]{11}")))
         throw new ValidatorException(new FacesMessage("Niepoprawny format numeru PESEL!"));
-    
-    Boolean isEditing; 
-     String isEditingStr = (String) component.getAttributes().get("isEditing");
-     isEditing = Boolean.valueOf(isEditingStr);
-     
-    if (cm.sprawdzPesel(pesel) && !(isEditing))
+
+    if (cm.sprawdzPesel(pesel))
         throw new ValidatorException(new FacesMessage("Nie można dodać czytelnika: Wprowadzony nr PESEL istnieje w bazie czytelnikow!"));
  }
 }

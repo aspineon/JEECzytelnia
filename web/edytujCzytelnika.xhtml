@@ -8,6 +8,7 @@
 
     <ui:define name="content">
         <h1>Edytuj czytelnika #{czytelnikCon.czytelnik.imie} #{czytelnikCon.czytelnik.nazwisko}</h1>
+        
         <h:form>
             <h:outputText id="komunikat"/>
             <h:messages style="color:red;margin:8px;" />
@@ -16,49 +17,47 @@
                     <td>Imie</td>
                     <td>
                         <h:inputText id="imie" value="#{czytelnikCon.czytelnik.imie}" required="true" label="Imię">
-                            <f:ajax event="blur" render="@this"/>
+                          <f:converter converterId="firstUpperCaseConverter"/>
+                          <f:ajax event="blur" render="imieMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="imieMsg" for="imie"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td>Nazwisko</td>
                     <td>
                         <h:inputText id="nazwisko" value="#{czytelnikCon.czytelnik.nazwisko}" required="true" label="Nazwisko">
-                            <f:ajax event="blur" render="@this"/>
+                            <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:ajax event="blur" render="nazwiskoMsg"/>
                         </h:inputText>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Pesel</td>
-                    <td>
-                        <h:inputText id="pesel" value="#{czytelnikCon.czytelnik.pesel}" required="true" maxlength="11" label="Pesel">
-                            <f:validator id="validator" validatorId="peselValidator" />
-                            <f:ajax event="blur" render="@this"/>
-                            <f:attribute name="isEditing" value="true" /> 
-                        </h:inputText>
+                        <span class="error"><h:message id="nazwiskoMsg" for="nazwisko"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td>Adres</td>
                     <td>
                         <h:inputText id="adres" value="#{czytelnikCon.czytelnik.adres}" required="true" label="Adres">
-                            <f:ajax event="blur" render="@this"/>
+                            <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:ajax event="blur" render="adresMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="adresMsg" for="adres"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td>Miasto</td>
                     <td>
                         <h:inputText id="miasto" value="#{czytelnikCon.czytelnik.miasto}" required="true"  label="Miasto">
-                            <f:ajax event="blur" render="@this"/>
+                            <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:ajax event="blur" render="miastoMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="miastoMsg" for="miasto"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
                         <h:commandButton action="#{czytelnikCon.edytujCzytelnika}" value="Edytuj">
-                            <f:ajax render="@form" />
+                            <f:ajax execute="@form" render="@form" />
                         </h:commandButton>
                     </td>
                 </tr>
