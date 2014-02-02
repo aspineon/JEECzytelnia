@@ -17,8 +17,9 @@
                     <td>
                         <h:inputText id="autorimie" value="#{ksiazkaCon.ksiazka.autorimie}" required="true" label="Imie Autora">
                             <f:converter converterId="firstUpperCaseConverter"/>
-                            <f:ajax event="blur" render="@this"/>
+                            <f:ajax event="blur" render="imieMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="imieMsg" for="autorimie"/></span>
                     </td>
                 </tr>
                 <tr>
@@ -26,8 +27,9 @@
                     <td>
                         <h:inputText id="autornazwisko" value="#{ksiazkaCon.ksiazka.autornazwisko}" required="true" label="Nazwisko Autora">
                             <f:converter converterId="firstUpperCaseConverter"/>
-                            <f:ajax event="blur" render="@this"/>
+                            <f:ajax event="blur" render="nazwiskoMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="nazwiskoMsg" for="autornazwisko"/></span>
                     </td>
                 </tr>
                 <tr>
@@ -35,15 +37,16 @@
                     <td>
                         <h:inputText id="tytul" value="#{ksiazkaCon.ksiazka.tytul}" required="true" label="Tytuł">
                             <f:converter converterId="firstUpperCaseConverter"/>
-                            <f:ajax event="blur" render="@this"/>
+                            <f:ajax event="blur" render="tytulMsg"/>
                         </h:inputText>
+                        <span class="error"><h:message id="tytulMsg" for="tytul"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
                         <h:commandButton action="#{ksiazkaCon.dodajKsiazke}" value="Dodaj">
-                            <f:ajax render="@form" />
+                            <f:ajax execute="@form" render="@form" />
                         </h:commandButton>
                     </td>
                 </tr>

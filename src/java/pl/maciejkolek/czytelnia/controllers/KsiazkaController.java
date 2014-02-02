@@ -50,6 +50,11 @@ public class KsiazkaController implements Serializable {
         return listaksiazek;
     }
     
+    public int iloscDostepnychKsiazek() {
+        List lista = this.listaKsiazekNiewypozyczonych();
+        return lista.size();
+    }
+    
     public String dodajKsiazke() {
         this.ksiazka.setWypozyczona(false);
         this.ksiazka.setIloscwypozyczen(0);

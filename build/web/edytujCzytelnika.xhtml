@@ -18,6 +18,7 @@
                     <td>
                         <h:inputText id="imie" value="#{czytelnikCon.czytelnik.imie}" required="true" label="Imię">
                           <f:converter converterId="firstUpperCaseConverter"/>
+                          <f:validateRegex pattern="([a-zA-Z]{3,30}\s*)+" />
                           <f:ajax event="blur" render="imieMsg"/>
                         </h:inputText>
                         <span class="error"><h:message id="imieMsg" for="imie"/></span>
@@ -28,6 +29,7 @@
                     <td>
                         <h:inputText id="nazwisko" value="#{czytelnikCon.czytelnik.nazwisko}" required="true" label="Nazwisko">
                             <f:converter converterId="firstUpperCaseConverter"/>
+                            <f:validateRegex pattern="[a-zA-Z]{3,30}" />
                             <f:ajax event="blur" render="nazwiskoMsg"/>
                         </h:inputText>
                         <span class="error"><h:message id="nazwiskoMsg" for="nazwisko"/></span>
