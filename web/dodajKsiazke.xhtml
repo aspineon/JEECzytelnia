@@ -17,7 +17,7 @@
                     <td>
                         <h:inputText id="autorimie" value="#{ksiazkaCon.ksiazka.autorimie}" required="true" label="Imie Autora">
                             <f:converter converterId="firstUpperCaseConverter"/>
-                            <f:ajax event="blur" render="imieMsg"/>
+                            <f:ajax event="blur" render="@this imieMsg"/>
                         </h:inputText>
                         <span class="error"><h:message id="imieMsg" for="autorimie"/></span>
                     </td>
@@ -27,7 +27,7 @@
                     <td>
                         <h:inputText id="autornazwisko" value="#{ksiazkaCon.ksiazka.autornazwisko}" required="true" label="Nazwisko Autora">
                             <f:converter converterId="firstUpperCaseConverter"/>
-                            <f:ajax event="blur" render="nazwiskoMsg"/>
+                            <f:ajax event="blur" render="@this nazwiskoMsg"/>
                         </h:inputText>
                         <span class="error"><h:message id="nazwiskoMsg" for="autornazwisko"/></span>
                     </td>
@@ -37,7 +37,7 @@
                     <td>
                         <h:inputText id="tytul" value="#{ksiazkaCon.ksiazka.tytul}" required="true" label="Tytuł">
                             <f:converter converterId="firstUpperCaseConverter"/>
-                            <f:ajax event="blur" render="tytulMsg"/>
+                            <f:ajax event="blur" render="@this tytulMsg"/>
                         </h:inputText>
                         <span class="error"><h:message id="tytulMsg" for="tytul"/></span>
                     </td>
